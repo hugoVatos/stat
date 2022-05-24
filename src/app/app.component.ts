@@ -17,7 +17,7 @@ export class AppComponent {
   ){
 
     setTimeout(() => {
-      this.statistiqueService.statistiques.push(new Statistique("Neymar", "4", "000 111 000"));
+      this.statistiqueService.statistiques.push(new Statistique("2", "Etats-Unis", "334 805 000", "1650031054073"));
     }, 4000);
   }
 

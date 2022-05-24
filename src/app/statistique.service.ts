@@ -1,14 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Statistique } from './models/statistique';
+import { HttpClient } from '@angular/common/http';
+import { StatistiqueBack } from './models/apiType';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class StatistiqueService {
 
-  statistiques: Statistique[] = [
-    new Statistique("ronaldo", "12", "777 111 000"),
-    new Statistique("messi", "11", "999 444 777")];
+  statistiques: Statistique[] = [];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) {
+    this.http.get<StatistiqueBack[]>("https://stats.naminilamy.fr").subscribe(
+      res => {
+        for (const statistique of res) {
+          this.statistiques.push(new Statistique(statistique.id, statistique.title, statistique.value, statistique.updatedAt));
+        }
+      });
+  }
 }
+
+

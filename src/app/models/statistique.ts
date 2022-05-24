@@ -1,14 +1,17 @@
 export class Statistique {
 
-  libelle? : string;
-  pourcent? : string;
-  code?: string;
+  id?: string;
+  title?: string;
+  value?: string;
+  updatedAt?: string;
 
-  constructor(libelle : string, pourcent : string, code : string) {
-    this.libelle = libelle;
-    this.pourcent = pourcent;
-    this.code = code;
+
+  constructor(id: string, title: string, value: string, updatedAt: string) {
+    this.id = id;
+    this.title = title;
+    this.value = value;
+    this.updatedAt = updatedAt;
+
   }
+
 }
-
-
