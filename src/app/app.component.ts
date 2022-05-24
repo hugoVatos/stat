@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Statistique} from "./models/statistique";
+import { StatistiqueService } from './statistique.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,15 @@ import {Statistique} from "./models/statistique";
 })
 export class AppComponent {
   title = 'stat';
-  statistiques: Statistique[] = [
-    new Statistique("ronaldo", "12", "777 111 000"),
-    new Statistique("messi", "11", "999 444 777")];
 
-  constructor(){
+
+
+  constructor(
+    public statistiqueService: StatistiqueService
+  ){
+
     setTimeout(() => {
-      this.statistiques.push(new Statistique("Neymar", "4", "000 111 000"));
+      this.statistiqueService.statistiques.push(new Statistique("Neymar", "4", "000 111 000"));
     }, 4000);
   }
 
