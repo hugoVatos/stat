@@ -1,0 +1,5 @@
+<div *ngFor="let s of statistiqueService.statistiques">
+  <app-statistique [statistique]="s"></app-statistique>
+  <button (click)="removeStatistique(s)">Effacer</button>
+</div>
+
