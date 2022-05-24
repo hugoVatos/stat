@@ -14,6 +14,7 @@ export class StatistiqueService {
   constructor(
     private http: HttpClient
   ) {
+    this.statistiques = [];
     this.http.get<StatistiqueBack[]>("https://stats.naminilamy.fr").subscribe(
       res => {
         for (const statistique of res) {

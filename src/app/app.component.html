@@ -1,8 +1,6 @@
+<app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
-<div *ngFor="let s of statistiqueService.statistiques">
-  <app-statistique [statistique]="s"></app-statistique>
-  <button (click)="removeStatistique(s)">Supprimer</button>
-</div>
+
 
 
 
