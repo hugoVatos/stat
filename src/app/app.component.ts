@@ -21,6 +21,12 @@ export class AppComponent {
     }, 4000);
   }
 
+  removeStatistique(statistique: Statistique){
+    let index = this.statistiqueService.statistiques.indexOf(statistique);
+    this.statistiqueService.statistiques.splice(index, 1);
+  }
+
+
 
 
 }
